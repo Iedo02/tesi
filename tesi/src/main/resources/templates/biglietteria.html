@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietteria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-links" id="navLinks">
+        <div class="nav-link">
+            <a href="#" class="link">
+                <i class="fa-solid fa-house"></i><span style="margin-left: 10px;">Home</span>
+            </a>
+        </div>
+        <div class="nav-link">
+            <a href="#" class="link">
+                <i class="fa-solid fa-user"></i><span style="margin-left: 13px;">Profilo</span>
+                <i class="fa-solid fa-angle-right detail"></i>
+            </a>
+            <div class="dropdown-menu">
+                <a href="#">
+                    <i class="fa-solid fa-ticket"></i> <span>I miei Biglietti</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars" id="menuIcon" style="cursor:pointer;"></i>
+    </div>
+</nav>
+<div class="search-page">
+    <div class="form-container">
+        <h1>Biglietteria</h1>
+        <p>Inserisci le informazioni necessarie per l'acquisto del tuo biglietto.</p>
+        <br>
+        <form id="searchForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cittaPartenza">Città di Partenza:</label>
+                    <select id="cittaPartenza" name="cittaPartenza" required>
+                        <option value="" disabled selected>Seleziona una città...</option>
+                        <!-- Le città verranno popolate dinamicamente -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cittaArrivo">Città di Arrivo:</label>
+                    <select id="cittaArrivo" name="cittaArrivo" required>
+                        <option value="" disabled selected>Seleziona una città...</option>
+                        <!-- Le città verranno popolate dinamicamente -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fermataPartenza">Fermata di Partenza:</label>
+                    <select id="fermataPartenza" name="fermataPartenza" required>
+                        <option value="" disabled selected>Seleziona una fermata...</option>
+                        <!-- Le fermate verranno popolate dinamicamente -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fermataArrivo">Fermata di Arrivo:</label>
+                    <select id="fermataArrivo" name="fermataArrivo" required>
+                        <option value="" disabled selected>Seleziona una fermata...</option>
+                        <!-- Le fermate verranno popolate dinamicamente -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="orario">Orario:</label>
+                    <input type="time" id="orario" name="orario" required>
+                </div>
+            </div>
+            <div class="button-row">
+                <button type="submit">Cerca</button>
+            </div>
+        </form>
+    </div>
+    <div id="result">
+        <!-- I risultati verranno mostrati qui -->
+    </div>
+</div>
+<script type="module" src="/js/search.js"></script>
+<script type="module" src="/js/navbar.js"></script>
+</body>
+</html>
